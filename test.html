@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-auth.js"></script>
+    <style>
+      canvas {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        min-height: 80vh;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas1"></canvas>
+    <!-- html table maken hier voor de name data -->
+    <!-- <table>
+
+    </table> -->
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: 'AIzaSyB4NjugF7oKt06iOC3dNKw1stWjzGFIJV0',
+        authDomain: 'pyapp1-f585d.firebaseapp.com',
+        databaseURL: 'https://pyapp1-f585d.firebaseio.com',
+        projectId: 'pyapp1-f585d',
+        storageBucket: 'pyapp1-f585d.appspot.com',
+        messagingSenderId: '622976244171',
+        appId: '1:622976244171:web:ec1bedd34e505dbbea7e4e'
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      function getData() {
+        const dbRef = firebase.database().ref('/');
+
+        dbRef.on('value', gotdata);
+        function gotdata(responsData) {
+          result = responsData.val();
+          dataArray = Object.values(result);
+          res = dataArray[dataArray.length - 1];
+
+          const begin = async res => {
+            let data = await res;
+            timeArray = [];
+            names = [];
+            let result = {};
+
+            result.activities = data.activities.map(item => {
+              return {
+                name: item.name,
+                time_entries: [getTimeEntry(item.time_entries)]
+              };
+            });
+
+            function getTimeEntry(timeEntries) {
+              let earliestTime = timeEntries[0].start_time;
+              let latestTime = timeEntries[0].end_time;
+
+              // Find earliest start time and latest end time.
+              timeEntries.forEach(entry => {
+                if (new Date(entry.start_time) < new Date(earliestTime)) {
+                  earliestTime = entry.start_time;
+                }
+
+                if (new Date(entry.end_time) > new Date(latestTime)) {
+                  latestTime = entry.end_time;
+                }
+              });
+
+              // Calculate total seconds.
+              let seconds = timeEntries.reduce((totalSeconds, currentEntry) => {
+                let seconds = 0;
+
+                seconds += currentEntry.seconds;
+                seconds += currentEntry.minutes * 60;
+                seconds += currentEntry.hours * 60 * 60;
+                seconds += currentEntry.days * 24 * 60 * 60;
+
+                return totalSeconds + seconds;
+              }, 0);
+
+              // Convert total seconds to days, hours, minutes, and seconds.
+              let days = Math.floor(seconds / (24 * 60 * 60));
+              seconds = seconds % (24 * 60 * 60);
+              let hours = Math.floor(seconds / (60 * 60));
+              seconds = seconds % (60 * 60);
+              let minutes = Math.floor(seconds / 60);
+              seconds = seconds % 60;
+
+              return {
+                start_time: earliestTime,
+                end_time: latestTime,
+                days: days,
+                hours: hours,
+                minutes: minutes,
+                seconds: seconds
+              };
+            }
+
+            [result].forEach(data => {
+              dataArray = data.activities;
+              dataArray.forEach(results => {
+                // substr gebruiken om de idiaal lengte van de naam te krijgen
+                name = results.name;
+                names.push(name.substr(0, 15) + '...');
+
+                timeResult = results.time_entries;
+
+                for (let index = 0; index < timeResult.length; index++) {
+                  hours = timeResult[index].hours * 3600;
+                  minutes = timeResult[index].minutes * 60;
+                  seconds = timeResult[index].seconds;
+
+                  time = Number(hours) + Number(minutes) + Number(seconds);
+                  timeArray.push(time);
+                }
+              });
+            });
+            // array filter method om tijd te filteren uit de data
+
+            datasetValue = [];
+            var count = 1;
+            for (var j = 0; j < count; j++) {
+              datasetValue[j] = {
+                data: timeArray
+              };
+            }
+
+            var barChartData1 = {
+              labels: names,
+              datasets: [
+                {
+                  label: 'Time',
+                  data: datasetValue[0].data,
+                  backgroundColor: 'rgba(255, 99, 132, 0.4)',
+                  borderColor: 'rgba(255, 99, 132)',
+                  fill: true,
+                  borderWidth: 1
+                }
+              ]
+            };
+
+            var ctx1 = document.getElementById('canvas1').getContext('2d');
+
+            var myBar1 = new Chart(ctx1, {
+              type: 'line',
+              data: barChartData1,
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                  yAxes: [
+                    {
+                      ticks: {
+                        userCallback: function(v) {
+                          return epoch_to_hh_mm_ss(v);
+                        },
+                        stepSize: 30 * 60
+                        //moet dynamisch worden
+                      }
+                    }
+                  ]
+                },
+                tooltips: {
+                  callbacks: {
+                    label: function(tooltipItem, data) {
+                      return (
+                        data.datasets[tooltipItem.datasetIndex].label +
+                        ': ' +
+                        epoch_to_hh_mm_ss(tooltipItem.yLabel)
+                      );
+                    }
+                  }
+                }
+              }
+            });
+            // console.log(myBar1.scales['y-axis-0'].ticksAsNumbers); getting stepSize
+            function epoch_to_hh_mm_ss(epoch) {
+              return new Date(epoch * 1000).toISOString().substr(11, 8);
+            }
+          };
+          begin(res);
+        }
+      }
+      getData();
+    </script>
+  </body>
+</html>

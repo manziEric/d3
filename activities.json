@@ -1,0 +1,588 @@
+{
+    "activities": [
+        {
+            "name": "Program Manager",
+            "time_entries": [
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:17:53",
+                    "hours": 1,
+                    "minutes": 2,
+                    "seconds": 11,
+                    "start_time": "2019-09-25 15:17:42"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:18:05",
+                    "hours": 0,
+                    "minutes": 10,
+                    "seconds": 1,
+                    "start_time": "2019-09-25 15:18:04"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:20:15",
+                    "hours": 0,
+                    "minutes": 20,
+                    "seconds": 4,
+                    "start_time": "2019-09-25 15:20:11"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:20:24",
+                    "hours": 0,
+                    "minutes": 2,
+                    "seconds": 2,
+                    "start_time": "2019-09-25 15:20:22"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:20:27",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 1,
+                    "start_time": "2019-09-25 15:20:25"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:21:35",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 13,
+                    "start_time": "2019-09-25 15:21:22"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:22:29",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 1,
+                    "start_time": "2019-09-25 15:22:28"
+                }
+            ]
+        },
+        {
+            "name": "Taakbeheer",
+            "time_entries": [
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:17:59",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 6,
+                    "start_time": "2019-09-25 15:17:53"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:18:29",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 12,
+                    "start_time": "2019-09-25 15:18:17"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:20:11",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 10,
+                    "start_time": "2019-09-25 15:20:01"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:21:58",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 3,
+                    "start_time": "2019-09-25 15:21:55"
+                }
+            ]
+        },
+        {
+            "name": "My application",
+            "time_entries": [
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:18:04",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 5,
+                    "start_time": "2019-09-25 15:17:59"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:18:17",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 1,
+                    "start_time": "2019-09-25 15:18:16"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:18:31",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 2,
+                    "start_time": "2019-09-25 15:18:29"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:20:01",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 4,
+                    "start_time": "2019-09-25 15:19:57"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:22:08",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 1,
+                    "start_time": "2019-09-25 15:22:07"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:22:19",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 3,
+                    "start_time": "2019-09-25 15:22:16"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:22:50",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 8,
+                    "start_time": "2019-09-25 15:22:41"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:24:12",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 5,
+                    "start_time": "2019-09-25 15:24:07"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-30 19:13:07",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 9,
+                    "start_time": "2019-09-30 19:12:58"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-30 19:14:45",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 14,
+                    "start_time": "2019-09-30 19:14:31"
+                }
+            ]
+        },
+        {
+            "name": "Start \u200e- Microsoft Edge",
+            "time_entries": [
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:18:08",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 3,
+                    "start_time": "2019-09-25 15:18:05"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-30 19:16:05",
+                    "hours": 0,
+                    "minutes": 1,
+                    "seconds": 17,
+                    "start_time": "2019-09-30 19:14:47"
+                }
+            ]
+        },
+        {
+            "name": "Uw apparaat heeft geen verbinding \u200e- Microsoft Edge",
+            "time_entries": [
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:18:11",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 3,
+                    "start_time": "2019-09-25 15:18:08"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:18:16",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 2,
+                    "start_time": "2019-09-25 15:18:13"
+                }
+            ]
+        },
+        {
+            "name": "Uw apparaat heeft geen verbinding en nog \u00e9\u00e9n pagina \u200e- Microsoft Edge",
+            "time_entries": [
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:18:12",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 1,
+                    "start_time": "2019-09-25 15:18:11"
+                }
+            ]
+        },
+        {
+            "name": "Lege pagina en nog \u00e9\u00e9n pagina \u200e- Microsoft Edge",
+            "time_entries": [
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:18:13",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 1,
+                    "start_time": "2019-09-25 15:18:12"
+                }
+            ]
+        },
+        {
+            "name": "activities - Kladblok",
+            "time_entries": [
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:19:57",
+                    "hours": 0,
+                    "minutes": 1,
+                    "seconds": 25,
+                    "start_time": "2019-09-25 15:18:31"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:22:16",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 7,
+                    "start_time": "2019-09-25 15:22:09"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-30 19:14:31",
+                    "hours": 0,
+                    "minutes": 1,
+                    "seconds": 21,
+                    "start_time": "2019-09-30 19:13:09"
+                }
+            ]
+        },
+        {
+            "name": "Verkenner",
+            "time_entries": [
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:20:16",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 1,
+                    "start_time": "2019-09-25 15:20:15"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:22:03",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 5,
+                    "start_time": "2019-09-25 15:21:58"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-30 19:12:32",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 23,
+                    "start_time": "2019-09-30 19:12:09"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-30 19:12:48",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 7,
+                    "start_time": "2019-09-30 19:12:40"
+                }
+            ]
+        },
+        {
+            "name": "WPy64-3740",
+            "time_entries": [
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:20:22",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 6,
+                    "start_time": "2019-09-25 15:20:16"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:22:07",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 4,
+                    "start_time": "2019-09-25 15:22:03"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:22:28",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 9,
+                    "start_time": "2019-09-25 15:22:19"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:22:41",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 3,
+                    "start_time": "2019-09-25 15:22:38"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:24:07",
+                    "hours": 2,
+                    "minutes": 1,
+                    "seconds": 17,
+                    "start_time": "2019-09-25 15:22:50"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:24:15",
+                    "hours": 4,
+                    "minutes": 0,
+                    "seconds": 3,
+                    "start_time": "2019-09-25 15:24:12"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-30 19:12:58",
+                    "hours": 4,
+                    "minutes": 0,
+                    "seconds": 9,
+                    "start_time": "2019-09-30 19:12:48"
+                }
+            ]
+        },
+        {
+            "name": "",
+            "time_entries": [
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:20:25",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 1,
+                    "start_time": "2019-09-25 15:20:24"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:21:55",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 4,
+                    "start_time": "2019-09-25 15:21:51"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-30 19:14:46",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 1,
+                    "start_time": "2019-09-30 19:14:45"
+                }
+            ]
+        },
+        {
+            "name": "Microsoft Store",
+            "time_entries": [
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:21:51",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 16,
+                    "start_time": "2019-09-25 15:21:35"
+                }
+            ]
+        },
+        {
+            "name": "Prullenbak",
+            "time_entries": [
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:22:35",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 6,
+                    "start_time": "2019-09-25 15:22:29"
+                },
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:22:38",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 2,
+                    "start_time": "2019-09-25 15:22:36"
+                }
+            ]
+        },
+        {
+            "name": "Meerdere items verwijderen",
+            "time_entries": [
+                {
+                    "days": 0,
+                    "end_time": "2019-09-25 15:22:36",
+                    "hours": 0,
+                    "minutes": 15,
+                    "seconds": 1,
+                    "start_time": "2019-09-25 15:22:35"
+                }
+            ]
+        },
+        {
+            "name": "Verkenner (reageert niet)",
+            "time_entries": [
+                {
+                    "days": 0,
+                    "end_time": "2019-09-30 19:12:40",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 7,
+                    "start_time": "2019-09-30 19:12:33"
+                }
+            ]
+        },
+        {
+            "name": "Naamloos - Kladblok",
+            "time_entries": [
+                {
+                    "days": 0,
+                    "end_time": "2019-09-30 19:13:09",
+                    "hours": 0,
+                    "minutes": 48,
+                    "seconds": 1,
+                    "start_time": "2019-09-30 19:13:07"
+                }
+            ]
+        },
+        {
+            "name": "Microsoft Edge",
+            "time_entries": [
+                {
+                    "days": 0,
+                    "end_time": "2019-09-30 19:14:47",
+                    "hours": 0,
+                    "minutes": 35,
+                    "seconds": 1,
+                    "start_time": "2019-09-30 19:14:46"
+                }
+            ]
+        },
+        {
+            "name": "wetransfer - Bing \u200e- Microsoft Edge",
+            "time_entries": [
+                {
+                    "days": 0,
+                    "end_time": "2019-09-30 19:16:11",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 6,
+                    "start_time": "2019-09-30 19:16:05"
+                }
+            ]
+        },
+        {
+            "name": "Er wordt gewacht op een antwoord van bing.com... \u200e- Microsoft Edge",
+            "time_entries": [
+                {
+                    "days": 0,
+                    "end_time": "2019-09-30 19:16:13",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 2,
+                    "start_time": "2019-09-30 19:16:11"
+                }
+            ]
+        },
+        {
+            "name": "WeTransfer \u200e- Microsoft Edge",
+            "time_entries": [
+                {
+                    "days": 0,
+                    "end_time": "2019-09-30 19:17:33",
+                    "hours": 0,
+                    "minutes": 1,
+                    "seconds": 19,
+                    "start_time": "2019-09-30 19:16:13"
+                }
+            ]
+        },
+        {
+            "name": "Nieuw tabblad en nog \u00e9\u00e9n pagina \u200e- Microsoft Edge",
+            "time_entries": [
+                {
+                    "days": 0,
+                    "end_time": "2019-09-30 19:17:43",
+                    "hours": 0,
+                    "minutes": 20,
+                    "seconds": 10,
+                    "start_time": "2019-09-30 19:17:33"
+                }
+            ]
+        },
+        {
+            "name": "email at - Bing en nog \u00e9\u00e9n pagina \u200e- Microsoft Edge",
+            "time_entries": [
+                {
+                    "days": 0,
+                    "end_time": "2019-09-30 19:17:58",
+                    "hours": 0,
+                    "minutes": 0,
+                    "seconds": 14,
+                    "start_time": "2019-09-30 19:17:43"
+                }
+            ]
+        },
+        {
+            "name": "WeTransfer en nog \u00e9\u00e9n pagina \u200e- Microsoft Edge",
+            "time_entries": [
+                {
+                    "days": 0,
+                    "end_time": "2019-09-30 19:18:51",
+                    "hours": 0,
+                    "minutes": 50,
+                    "seconds": 52,
+                    "start_time": "2019-09-30 19:17:58"
+                }
+            ]
+        },
+        {
+            "name": "Openen",
+            "time_entries": [
+                {
+                    "days": 0,
+                    "end_time": "2019-09-30 19:19:09",
+                    "hours": 0,
+                    "minutes": 30,
+                    "seconds": 58,
+                    "start_time": "2019-09-30 19:18:51"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-auth.js"></script>
+    <title>firebase</title>
+  </head>
+  <body>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <!--############# Dit hoort in een aparte bestand voor veiligheids redenen ########-->
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: 'AIzaSyB4NjugF7oKt06iOC3dNKw1stWjzGFIJV0',
+        authDomain: 'pyapp1-f585d.firebaseapp.com',
+        databaseURL: 'https://pyapp1-f585d.firebaseio.com',
+        projectId: 'pyapp1-f585d',
+        storageBucket: 'pyapp1-f585d.appspot.com',
+        messagingSenderId: '622976244171',
+        appId: '1:622976244171:web:ec1bedd34e505dbbea7e4e'
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      function writeData() {
+        firebase
+          .database()
+          .ref('User')
+          .set({
+            name: document.querySelector('#namefield').value,
+            age: document.querySelector('#agefield').value
+          });
+        getData();
+      }
+      array = [];
+
+      function getData() {
+        const dbRef = firebase.database().ref('/');
+        dbRef.on('value', gotdata);
+
+        function gotdata(responseData) {
+          result = responseData.val();
+          dataArray = Object.values(result);
+          lastObj = dataArray[dataArray.length - 1];
+          array.push(lastObj);
+
+          // console.log(lastObj);
+        }
+      }
+      getData();
+      console.log(array);
+    </script>
+    <h1>User Data</h1>
+    <input type="text" placeholder="name" id="namefield" />
+    <input type="text" placeholder="age" id="agefield" />
+    <button onclick="writeData()">Submit</button>
+
+    <p id="data"></p>
+  </body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <style>
+      canvas {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas1"></canvas>
+    <script>
+      fetch('./activities.json')
+        .then(data => {
+          return data.json();
+        })
+        .then(res => {
+          let data = res;
+          timeArray = [];
+          names = [];
+          let result = {};
+
+          result.activities = data.activities.map(item => {
+            return {
+              name: item.name,
+              time_entries: [getTimeEntry(item.time_entries)]
+            };
+          });
+
+          function getTimeEntry(timeEntries) {
+            let earliestTime = timeEntries[0].start_time;
+            let latestTime = timeEntries[0].end_time;
+
+            // Find earliest start time and latest end time.
+            timeEntries.forEach(entry => {
+              if (new Date(entry.start_time) < new Date(earliestTime)) {
+                earliestTime = entry.start_time;
+              }
+
+              if (new Date(entry.end_time) > new Date(latestTime)) {
+                latestTime = entry.end_time;
+              }
+            });
+
+            // Calculate total seconds.
+            let seconds = timeEntries.reduce((totalSeconds, currentEntry) => {
+              let seconds = 0;
+
+              seconds += currentEntry.seconds;
+              seconds += currentEntry.minutes * 60;
+              seconds += currentEntry.hours * 60 * 60;
+              seconds += currentEntry.days * 24 * 60 * 60;
+
+              return totalSeconds + seconds;
+            }, 0);
+
+            // Convert total seconds to days, hours, minutes, and seconds.
+            let days = Math.floor(seconds / (24 * 60 * 60));
+            seconds = seconds % (24 * 60 * 60);
+            let hours = Math.floor(seconds / (60 * 60));
+            seconds = seconds % (60 * 60);
+            let minutes = Math.floor(seconds / 60);
+            seconds = seconds % 60;
+
+            return {
+              start_time: earliestTime,
+              end_time: latestTime,
+              days: days,
+              hours: hours,
+              minutes: minutes,
+              seconds: seconds
+            };
+          }
+
+          // console.log(result);
+          [result].forEach(data => {
+            dataArray = data.activities;
+            dataArray.forEach(results => {
+              name = results.name;
+              names.push(name);
+
+              timeResult = results.time_entries;
+
+              for (let index = 0; index < timeResult.length; index++) {
+                hours = timeResult[index].hours * 3600;
+                minutes = timeResult[index].minutes * 60;
+                seconds = timeResult[index].seconds;
+
+                time = Number(hours) + Number(minutes) + Number(seconds);
+                console.log(time);
+                timeArray.push(time);
+              }
+            });
+          });
+
+          datasetValue = [];
+          var count = 1;
+          for (var j = 0; j < count; j++) {
+            datasetValue[j] = {
+              data: timeArray
+            };
+          }
+
+          // console.log(datasetValue[0].data);
+          var barChartData1 = {
+            labels: names,
+            datasets: [
+              {
+                label: 'Time',
+                data: datasetValue[0].data
+              }
+            ]
+          };
+
+          var ctx1 = document.getElementById('canvas1').getContext('2d');
+
+          var myBar1 = new Chart(ctx1, {
+            type: 'line',
+            data: barChartData1,
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              scales: {
+                yAxes: [
+                  {
+                    ticks: {
+                      userCallback: function(v) {
+                        return epoch_to_hh_mm_ss(v);
+                      },
+                      stepSize: 1500
+                    }
+                  }
+                ]
+              },
+              tooltips: {
+                callbacks: {
+                  label: function(tooltipItem, data) {
+                    return (
+                      data.datasets[tooltipItem.datasetIndex].label +
+                      ': ' +
+                      epoch_to_hh_mm_ss(tooltipItem.yLabel)
+                    );
+                  }
+                }
+              }
+            }
+          });
+
+          function epoch_to_hh_mm_ss(epoch) {
+            return new Date(epoch * 1000).toISOString().substr(12, 7);
+          }
+        });
+    </script>
+  </body>
+</html>
